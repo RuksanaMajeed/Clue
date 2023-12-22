@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Clue Checker</title>
-</head>
-<body>
-  <label for="clueInput">Enter the Clue:</label>
-  <input type="text" id="clueInput">
-  <button id="submitButton" onclick="checkClue()">Submit</button>
-  <div id="message"></div>
-  <div id="imageContainer"></div>
-</body>
+<html lang="en">
+  <script>
+    function checkClue() {
+      var clue = document.getElementById("clueInput").value;
+      var messageDiv = document.getElementById("message");
+      var imageDiv = document.getElementById("imageContainer");
+
+      if (clue.toUpperCase().trim() === "CHILLOUT") {
+        messageDiv.innerHTML =
+          "Congratulations! Go to the place that is specified in the clue and say the CODENAME specified in the QR Code below.(All team members should say the codename together)";
+        imageDiv.innerHTML =
+          '<a href="https://ibb.co/RyQNMwG"><img src="https://i.ibb.co/vYLhrnC/Ettayi-coffee.png" alt="Ettayi-coffee" border="0"></a>';
+      } else {
+        messageDiv.innerHTML = "";
+        imageDiv.innerHTML = "";
+      }
+    }
+  </script>
+  <head>
+    <title>Treasure Hunt</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <label for="clueInput">Enter the Clue:</label>
+    <input type="text" id="clueInput" />
+    <button id="submitButton" onclick="checkClue()">Submit</button>
+    <div id="message"></div>
+    <div id="imageContainer"></div>
+  </body>
 </html>
